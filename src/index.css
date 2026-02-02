@@ -1,0 +1,144 @@
+/* Lucky Seven - Party Crashers Style */
+:root {
+  --bg-start: #1a0b2e;
+  --bg-end: #2d1b4e;
+  --primary-pink: #ff006e;
+  --primary-blue: #00f5ff;
+  --accent-yellow: #ffbe0b;
+  --text-white: #ffffff;
+  --text-stroke: #000000;
+  --font-header: 'Titan One', 'Fredoka', sans-serif;
+  --font-numbers: 'Bebas Neue', 'Archivo Black', sans-serif;
+  --font-body: 'Nunito', 'Poppins', sans-serif;
+  --radius: 20px;
+  --radius-lg: 24px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --transition: 0.3s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--text-white);
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 50%, var(--bg-start) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Typography */
+.lucky-header {
+  font-family: var(--font-header);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  -webkit-text-stroke: 2px var(--text-stroke);
+  text-stroke: 2px var(--text-stroke);
+}
+
+.lucky-numbers {
+  font-family: var(--font-numbers);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  letter-spacing: 0.05em;
+}
+
+.lucky-body {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+/* Buttons */
+.lucky-btn {
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius);
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.lucky-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.lucky-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.lucky-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cards */
+.lucky-card {
+  border-radius: var(--radius-lg);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.25rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* Inputs */
+.lucky-input {
+  font-family: var(--font-numbers);
+  font-size: 1.5rem;
+  text-align: center;
+  width: 3rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text-white);
+  -webkit-text-stroke: 1px var(--text-stroke);
+}
+
+.lucky-input:focus {
+  outline: none;
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 16px rgba(255, 190, 11, 0.5);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-pink);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
